@@ -1,4 +1,5 @@
 import sys
+import re
 
 # import pyparsing - available if you need it!
 # import lark - available if you need it!
@@ -15,10 +16,10 @@ def match_pattern(input_line, pattern):
         for i in input_line:
             if i.isalnum():
                 return 1
-    elif type(pattern)==list:
-        for i in pattern:
-            if i==input_line:
-                return 1
+    elif pattern==[]:
+        if re.findall(pattern,input_line):
+            return 1
+
     else:
         raise RuntimeError(f"Unhandled pattern: {pattern}")
 
