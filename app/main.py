@@ -17,9 +17,8 @@ def match_pattern(input_line, pattern):
                 return 1
     elif type(pattern)==list:
         for i in pattern:
-            for j in input_line:
-                if i==j:
-                    return 1
+            if i==input_line:
+                return 1
     else:
         raise RuntimeError(f"Unhandled pattern: {pattern}")
 
