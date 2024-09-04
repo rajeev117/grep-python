@@ -16,7 +16,7 @@ def match_pattern(input_line, pattern):
         for i in input_line:
             if i.isalnum():
                 return 1
-    elif pattern==[]:
+    elif pattern:
         if re.findall(pattern,input_line):
             return 1
 
