@@ -8,7 +8,10 @@ def match_pattern(input_line, pattern):
     if len(pattern) == 1:
         return pattern in input_line
     elif pattern=="\\d":
-        return any(c.isdigit() for i in input_line)
+        for i in input_line:
+            if i.isdigit():
+                return 1       
+        
     else:
         raise RuntimeError(f"Unhandled pattern: {pattern}")
 
